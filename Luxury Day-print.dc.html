@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:wght@400;500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <script src="./doc-page.js"></script>
+  <style>
+    doc-page:not(:defined){visibility:hidden}
+    body{margin:0;}
+    a{color:#C9A870;}
+    a:hover{color:#E0BC7C;}
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important; }
+  </style>
+</helmet>
+
+<doc-page margin="0.5in">
+<div style="font-family:'EB Garamond', serif; font-size:18px; line-height:1.6; color:#211D14; background:#F1EBDD;">
+
+  <!-- NAV -->
+  <header style="position:relative; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:22px 0; background:transparent; break-inside:avoid;">
+    <div style="display:flex; align-items:center; gap:12px; font-family:'Cormorant Garamond', serif; font-size:22px; letter-spacing:0.1em; color:#1B3A2B;">
+      <img src="./assets/logo-badge.png" alt="Luxury Day" style="width:38px; height:38px; border-radius:50%; object-fit:cover;">
+      Luxury Day
+    </div>
+    <div style="font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#1B3A2B;">VIP Travel Agency · Санкт-Петербург</div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; padding:50px 24px; background:radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201,168,112,0.34), transparent 60%), linear-gradient(180deg, #0E2018 0%, #1B3A2B 62%, #234534 100%); break-inside:avoid;">
+    <img src="./assets/logo-badge.png" alt="Luxury Day" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:22px;">
+    <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#C7AE87; margin-bottom:22px;">VIP Travel Agency · Санкт-Петербург</div>
+    <h1 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:56px; line-height:1; color:#F1EBDD; margin:0;">День, продуманный<br><em style="font-style:italic; color:#E0BC7C;">до совершенства</em></h1>
+    <p style="max-width:520px; margin:24px auto 0; font-size:18px; color:rgba(241,235,221,0.72);">Частные вертолёты и яхты, автомобили премиум-класса, лучшие рестораны и персональный консьерж — мы собираем ваш день в Петербурге так, чтобы вам осталось только наслаждаться.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="padding:60px 0; break-inside:avoid;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
+      <div>
+        <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:18px;">О Luxury Day</div>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:32px; color:#1B3A2B; margin:0 0 20px; line-height:1.08;">Уединённый отдых<br>без единой заботы</h2>
+        <p style="color:rgba(33,29,20,0.62); margin:0 0 16px;">Мы создаём индивидуальные VIP-туры «под ключ» в Санкт-Петербурге, где каждая деталь продумана заранее — от маршрута до последнего бокала на закате.</p>
+        <p style="color:rgba(33,29,20,0.62); margin:0 0 16px;">Пока вы <strong style="color:#1B3A2B; font-weight:500;">наслаждаетесь городом</strong>, мы берём на себя всю организацию: частные вертолёты и яхты, автомобили класса люкс, столики в лучших ресторанах, закрытые SPA и банные комплексы, персональный консьерж-сервис.</p>
+        <p style="color:rgba(33,29,20,0.62); margin:0;">Мы ценим ваше время, комфорт и конфиденциальность — и гарантируем безупречный сервис на каждом шагу.</p>
+      </div>
+      <img src="./assets/about-section.png" alt="Luxury Day" style="width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:4px;">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:#E7DEC7; padding:50px 24px; border-top:1px solid rgba(33,29,20,0.14); border-bottom:1px solid rgba(33,29,20,0.14); break-before:page;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 40px;">
+      <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">С нами вы сможете</div>
+      <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:30px; color:#1B3A2B; margin:0;">Петербург на ваших условиях</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(33,29,20,0.14); border:1px solid rgba(33,29,20,0.14);">
+      <div style="background:#E7DEC7; padding:28px 16px; text-align:center; break-inside:avoid;">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:19px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Вертолёт</h3>
+        <p style="font-size:14px; color:rgba(33,29,20,0.62); margin:0;">Город с высоты птичьего полёта</p>
+      </div>
+      <div style="background:#E7DEC7; padding:28px 16px; text-align:center; break-inside:avoid;">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:19px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Яхта и катер</h3>
+        <p style="font-size:14px; color:rgba(33,29,20,0.62); margin:0;">Прогулка на премиальной воде</p>
+      </div>
+      <div style="background:#E7DEC7; padding:28px 16px; text-align:center; break-inside:avoid;">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:19px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Автомобиль</h3>
+        <p style="font-size:14px; color:rgba(33,29,20,0.62); margin:0;">Люкс-авто с личным водителем</p>
+      </div>
+      <div style="background:#E7DEC7; padding:28px 16px; text-align:center; break-inside:avoid;">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:19px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Рестораны и SPA</h3>
+        <p style="font-size:14px; color:rgba(33,29,20,0.62); margin:0;">Лучшие столики и закрытые бани</p>
+      </div>
+      <div style="background:#E7DEC7; padding:28px 16px; text-align:center; break-inside:avoid;">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:19px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Консьерж</h3>
+        <p style="font-size:14px; color:rgba(33,29,20,0.62); margin:0;">Персональный менеджер всегда рядом</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="padding:60px 0; break-before:page;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 40px;">
+      <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">Программы</div>
+      <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:30px; color:#1B3A2B; margin:0;">Три способа провести день</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <div style="background:#0E2018; color:#F1EBDD; border-radius:3px; padding:28px 22px; display:flex; flex-direction:column; break-inside:avoid;">
+        <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87; margin-bottom:10px;">6 часов</div>
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:500; margin:0 0 8px;">Классик</h3>
+        <p style="font-size:14px; color:rgba(241,235,221,0.72); margin:0 0 14px;">Обзорная прогулка по городу на люкс-авто с остановкой в ресторане.</p>
+        <div style="font-family:'Cormorant Garamond', serif; font-size:22px; color:#C7AE87;">от 180 000 ₽</div>
+      </div>
+      <div style="background:#1B3A2B; color:#F1EBDD; border-radius:3px; padding:28px 22px; display:flex; flex-direction:column; border:1px solid #C7AE87; break-inside:avoid;">
+        <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87; margin-bottom:10px;">10 часов</div>
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:500; margin:0 0 8px;">Премиум</h3>
+        <p style="font-size:14px; color:rgba(241,235,221,0.72); margin:0 0 14px;">Вертолётная прогулка, яхта по Неве и ужин в закрытом заведении.</p>
+        <div style="font-family:'Cormorant Garamond', serif; font-size:22px; color:#C7AE87;">от 420 000 ₽</div>
+      </div>
+      <div style="background:#0E2018; color:#F1EBDD; border-radius:3px; padding:28px 22px; display:flex; flex-direction:column; break-inside:avoid;">
+        <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87; margin-bottom:10px;">Целый день</div>
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:500; margin:0 0 8px;">VIP Absolute</h3>
+        <p style="font-size:14px; color:rgba(241,235,221,0.72); margin:0 0 14px;">Полное погружение: вертолёт, яхта, SPA, лучшие рестораны города.</p>
+        <div style="font-family:'Cormorant Garamond', serif; font-size:22px; color:#C7AE87;">от 890 000 ₽</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section style="position:relative; padding:60px 24px; text-align:center; color:#F1EBDD; background:linear-gradient(180deg, #0E2018, #1B3A2B 55%, #0E2018); break-inside:avoid;">
+    <blockquote style="font-family:'Cormorant Garamond', serif; font-style:italic; font-size:24px; max-width:700px; margin:0 auto; line-height:1.5;">«Мы не продаём экскурсии — мы дарим один безупречный день, который останется с вами надолго.»</blockquote>
+    <div style="margin-top:20px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87;">Команда Luxury Day</div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding:60px 0; break-before:page;">
+    <div style="text-align:center; max-width:640px; margin:0 auto 40px;">
+      <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">Вопросы и ответы</div>
+      <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:30px; color:#1B3A2B; margin:0;">Часто задаваемые вопросы</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1px; background:rgba(33,29,20,0.14); border:1px solid rgba(33,29,20,0.14);">
+      <div style="background:#F1EBDD; padding:20px 24px; break-inside:avoid;">
+        <div style="font-family:'Cormorant Garamond', serif; font-size:19px; color:#1B3A2B;">Как быстро вы подтверждаете заявку?</div>
+        <p style="color:rgba(33,29,20,0.62); margin:10px 0 0; font-size:15px;">Персональный менеджер связывается с вами в течение 15 минут после заявки и подтверждает программу в день обращения.</p>
+      </div>
+      <div style="background:#F1EBDD; padding:20px 24px; break-inside:avoid;">
+        <div style="font-family:'Cormorant Garamond', serif; font-size:19px; color:#1B3A2B;">Можно ли изменить программу под свои пожелания?</div>
+        <p style="color:rgba(33,29,20,0.62); margin:10px 0 0; font-size:15px;">Да, каждая программа собирается индивидуально — маршрут, транспорт и рестораны можно менять под ваши предпочтения.</p>
+      </div>
+      <div style="background:#F1EBDD; padding:20px 24px; break-inside:avoid;">
+        <div style="font-family:'Cormorant Garamond', serif; font-size:19px; color:#1B3A2B;">За сколько дней нужно бронировать?</div>
+        <p style="color:rgba(33,29,20,0.62); margin:10px 0 0; font-size:15px;">Рекомендуем от 3 дней для стандартных программ и от 7 дней для вертолётных и яхтенных туров.</p>
+      </div>
+      <div style="background:#F1EBDD; padding:20px 24px; break-inside:avoid;">
+        <div style="font-family:'Cormorant Garamond', serif; font-size:19px; color:#1B3A2B;">Работаете ли вы с иностранными гостями?</div>
+        <p style="color:rgba(33,29,20,0.62); margin:10px 0 0; font-size:15px;">Да, консьерж-сервис доступен на русском и английском языках, включая помощь с трансфером и бронированием отелей.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding:60px 24px; background:#F1EBDD; break-before:page;">
+    <div>
+      <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">Свяжитесь с нами</div>
+      <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:32px; color:#1B3A2B; margin:0 0 18px; line-height:1.08;">Начнём планировать ваш день</h2>
+      <p style="color:rgba(33,29,20,0.62); font-size:16px; margin:0 0 26px; max-width:420px;">Оставьте заявку — персональный менеджер свяжется с вами в течение 15 минут и подберёт программу под ваши пожелания.</p>
+      <div style="display:flex; gap:14px; margin-bottom:16px;">
+        <span style="color:#A9895F;">☎</span>
+        <div><span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A9895F;">Телефон</span><span style="color:#1B3A2B; font-size:16px;">+7 (812) 000-00-00</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="color:#A9895F;">✉</span>
+        <div><span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A9895F;">Почта</span><span style="color:#1B3A2B; font-size:16px;">concierge@luxuryday.ru</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0E2018; color:rgba(241,235,221,0.72); padding:30px 24px; break-inside:avoid;">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:20px; border-bottom:1px solid rgba(241,235,221,0.22); flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="./assets/logo-badge.png" alt="Luxury Day" style="width:34px; height:34px; border-radius:50%; object-fit:cover;">
+        <span style="font-family:'Cormorant Garamond', serif; font-size:18px; letter-spacing:0.08em; color:#F1EBDD;">Luxury Day</span>
+      </div>
+    </div>
+    <div style="padding-top:16px; display:flex; justify-content:space-between; font-family:'Jost', sans-serif; font-size:11px; color:rgba(241,235,221,0.4); flex-wrap:wrap; gap:10px;">
+      <span>© 2026 Luxury Day. Все права защищены.</span>
+      <span>Санкт-Петербург</span>
+    </div>
+  </footer>
+
+</div>
+</doc-page>
+</x-dc>
+</body>
+</html>

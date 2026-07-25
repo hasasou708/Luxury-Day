@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<template id="__bundler_thumbnail" data-bg-color="#1B3A2B">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1B3A2B"/>
+    <circle cx="600" cy="330" r="90" fill="none" stroke="#E0BC7C" stroke-width="4"/>
+    <text x="600" y="345" font-family="Georgia, serif" font-size="60" fill="#E0BC7C" text-anchor="middle">LD</text>
+    <text x="600" y="500" font-family="Georgia, serif" font-size="44" fill="#F1EBDD" text-anchor="middle">Luxury Day</text>
+  </svg>
+</template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:wght@400;500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body{margin:0;}
+    .ld-gallery-item:hover .ld-gallery-fade, .ld-gallery-item:hover .ld-gallery-cap{ opacity:1; }
+    .ld-gallery-item:hover .ld-gallery-cap{ transform:translateY(0); }
+    @keyframes ldRise{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes ldTwinkle{ 0%,100%{opacity:.25; transform:scale(.85) rotate(0deg);} 50%{opacity:1; transform:scale(1.15) rotate(8deg);} }
+    @keyframes ldScrollBounce{ 0%,100%{ transform:translateY(0); opacity:0.5;} 50%{ transform:translateY(10px); opacity:1;} }
+    a{color:#C9A870;}
+    a:hover{color:#E0BC7C;}
+    .ld-service-item{ transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease; }
+    .ld-service-item:hover{ transform:translateY(-6px); box-shadow:0 24px 40px -20px rgba(33,29,20,0.18); z-index:1; position:relative; }
+    .ld-pcard{ transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease; }
+    .ld-pcard:hover{ transform:translateY(-8px); }
+    .ld-gallery-item{ transition:transform .5s cubic-bezier(.22,1,.36,1); }
+    .ld-gallery-item:hover{ transform:scale(1.02); }
+    .ld-ornament{ display:flex; align-items:center; justify-content:center; gap:18px; }
+    .ld-ornament span.line{ height:1px; width:90px; background:linear-gradient(90deg, transparent, currentColor, transparent); opacity:0.45; }
+    .ld-ornament span.dot{ width:6px; height:6px; transform:rotate(45deg); background:currentColor; opacity:0.6; }
+  </style>
+</helmet>
+
+<div style="font-family:'EB Garamond', serif; font-size:18px; line-height:1.6; color:#211D14; background:#F1EBDD; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <header style="{{ headerStyle }}">
+    <div style="{{ headerBrandStyle }}">
+<img src="./assets/logo-badge.png" alt="Luxury Day" style="width:38px; height:38px; border-radius:50%; object-fit:cover;">
+      Luxury Day
+    </div>
+    <nav style="display:flex; gap:34px;">
+      <a href="#about" style="{{ headerLinkStyle }}">О нас</a>
+      <a href="#services" style="{{ headerLinkStyle }}">Сервис</a>
+      <a href="#packages" style="{{ headerLinkStyle }}">Программы</a>
+      <a href="#gallery" style="{{ headerLinkStyle }}">Галерея</a>
+      <a href="#contact" style="{{ headerLinkStyle }}">Контакты</a>
+    </nav>
+    <a href="#contact" style="font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#0E2018; background:#E0BC7C; padding:11px 22px; border-radius:2px;">Консультация</a>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; min-height:92vh; display:flex; flex-direction:column; align-items:center; justify-content:space-between; text-align:center; padding:140px 24px 60px; background:radial-gradient(ellipse 1100px 650px at 50% -5%, rgba(224,188,124,0.5), transparent 62%), radial-gradient(ellipse 700px 400px at 15% 90%, rgba(201,168,112,0.18), transparent 65%), linear-gradient(180deg, #0A1E16 0%, #1E3F2F 62%, #274F3B 100%); overflow:hidden;">
+    <svg style="position:absolute; top:18%; left:14%; width:20px; height:20px; color:#C7AE87; animation:ldTwinkle 3.2s ease-in-out infinite;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; top:70%; right:16%; width:16px; height:16px; color:#C7AE87; animation:ldTwinkle 3.2s ease-in-out infinite 1.1s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; top:30%; right:28%; width:12px; height:12px; color:#C7AE87; animation:ldTwinkle 3.2s ease-in-out infinite 1.8s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+<img src="./assets/logo-badge.png" alt="Luxury Day" style="width:118px; height:118px; border-radius:50%; object-fit:cover; opacity:0; animation:ldRise 1s ease forwards 0.05s; margin-bottom:24px;">
+    <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#C7AE87; opacity:0; animation:ldRise 1s ease forwards 0.2s; margin-bottom:22px;">VIP Travel Agency · Санкт-Петербург</div>
+    <h1 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(48px,8vw,100px); line-height:0.98; color:#F1EBDD; opacity:0; animation:ldRise 1s ease forwards 0.4s; margin:0;">День, продуманный<br><em style="font-style:italic; color:#E0BC7C;">до совершенства</em></h1>
+    <p style="max-width:560px; margin:26px auto 0; font-size:19px; color:rgba(241,235,221,0.72); opacity:0; animation:ldRise 1s ease forwards 0.6s;">Частные вертолёты и яхты, автомобили премиум-класса, лучшие рестораны и личная охрана — мы собираем ваш день в Петербурге так, чтобы вам осталось только наслаждаться.</p>
+    <div style="display:flex; gap:18px; margin-top:40px; opacity:0; animation:ldRise 1s ease forwards 0.8s;">
+      <a href="#packages" style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; padding:16px 34px; border-radius:2px; background:#A9895F; color:#0E2018;">Смотреть программы</a>
+      <a href="#contact" style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; padding:16px 34px; border-radius:2px; border:1px solid rgba(241,235,221,0.4); color:#F1EBDD;">Оставить заявку</a>
+    </div>
+    </div>
+    <div style="flex:1;"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="position:relative; padding:130px 40px; max-width:1140px; margin:0 auto;">
+    <svg style="position:absolute; top:8%; right:6%; width:14px; height:14px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; bottom:10%; left:4%; width:10px; height:10px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite 1.4s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+      <div>
+        <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:18px;">О Luxury Day</div>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(32px,4vw,46px); color:#1B3A2B; margin:0 0 26px; line-height:1.08;">Уединённый отдых<br>без единой заботы</h2>
+        <p style="color:rgba(33,29,20,0.62); margin:0 0 18px;">Мы создаём индивидуальные VIP-туры «под ключ» в Санкт-Петербурге, где каждая деталь продумана заранее — от маршрута до последнего бокала на закате.</p>
+        <p style="color:rgba(33,29,20,0.62); margin:0 0 18px;">Пока вы <strong style="color:#1B3A2B; font-weight:500;">наслаждаетесь городом</strong>, мы берём на себя всю организацию: частные вертолёты и яхты, автомобили класса люкс, столики в лучших ресторанах, закрытые SPA и банные комплексы, персональный консьерж-сервис.</p>
+        <p style="color:rgba(33,29,20,0.62); margin:0;">Мы ценим ваше время, комфорт и конфиденциальность — и гарантируем безупречный сервис на каждом шагу.</p>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute; top:20px; left:20px; right:-20px; bottom:-20px; border:1px solid rgba(169,137,95,0.4); border-radius:4px; z-index:0;"></div>
+<img src="./assets/about-section.png" alt="Luxury Day" style="position:relative; z-index:1; width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:4px; box-shadow:0 40px 70px -30px rgba(27,58,43,0.35);">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="position:relative; background:#E7DEC7; padding:110px 40px; border-top:1px solid rgba(33,29,20,0.14); border-bottom:1px solid rgba(33,29,20,0.14);">
+    <svg style="position:absolute; top:12%; left:8%; width:12px; height:12px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite .6s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; bottom:14%; right:7%; width:15px; height:15px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite 2s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="text-align:center; max-width:640px; margin:0 auto 64px;">
+        <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">С нами вы сможете</div>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(30px,4vw,42px); color:#1B3A2B; margin:0;">Петербург на ваших условиях</h2>
+      </div>
+      <div class="ld-ornament" style="color:#A9895F; margin:0 0 56px;"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(33,29,20,0.14); border:1px solid rgba(33,29,20,0.14);">
+        <div class="ld-service-item" style="background:#E7DEC7; padding:40px 24px; text-align:center;">
+          <svg style="width:42px; height:42px; color:#A9895F; margin:0 auto 22px; display:block;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 30h30l6-6H18l-4 6z"></path><path d="M20 24V12l14 6"></path><line x1="4" y1="36" x2="44" y2="36"></line></svg>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Вертолёт</h3>
+          <p style="font-size:15px; color:rgba(33,29,20,0.62); margin:0;">Город с высоты птичьего полёта</p>
+        </div>
+        <div class="ld-service-item" style="background:#E7DEC7; padding:40px 24px; text-align:center;">
+          <svg style="width:42px; height:42px; color:#A9895F; margin:0 auto 22px; display:block;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 32c6 6 30 6 36 0"></path><path d="M10 32l2-14h20l4 14"></path><line x1="22" y1="18" x2="22" y2="6"></line><path d="M22 8h10l-10 8"></path></svg>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Яхта и катер</h3>
+          <p style="font-size:15px; color:rgba(33,29,20,0.62); margin:0;">Прогулка на премиальной воде</p>
+        </div>
+        <div class="ld-service-item" style="background:#E7DEC7; padding:40px 24px; text-align:center;">
+          <svg style="width:42px; height:42px; color:#A9895F; margin:0 auto 22px; display:block;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 30l4-10c1-3 3-4 6-4h16c3 0 5 1 6 4l4 10"></path><rect x="4" y="30" width="40" height="8" rx="2"></rect><circle cx="14" cy="38" r="3"></circle><circle cx="34" cy="38" r="3"></circle></svg>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Автомобиль</h3>
+          <p style="font-size:15px; color:rgba(33,29,20,0.62); margin:0;">Люкс-авто с личным водителем</p>
+        </div>
+        <div class="ld-service-item" style="background:#E7DEC7; padding:40px 24px; text-align:center;">
+          <svg style="width:42px; height:42px; color:#A9895F; margin:0 auto 22px; display:block;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M10 20c0-6 4-10 10-10s10 4 10 10"></path><path d="M6 20h32v6c0 8-7 14-16 14S6 34 6 26v-6z"></path><line x1="14" y1="40" x2="34" y2="40"></line></svg>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Рестораны и SPA</h3>
+          <p style="font-size:15px; color:rgba(33,29,20,0.62); margin:0;">Лучшие столики и закрытые бани</p>
+        </div>
+        <div class="ld-service-item" style="background:#E7DEC7; padding:40px 24px; text-align:center;">
+          <svg style="width:42px; height:42px; color:#A9895F; margin:0 auto 22px; display:block;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M24 4l16 6v11c0 10-7 18-16 21-9-3-16-11-16-21V10z"></path><path d="M18 24l4 4 8-9"></path></svg>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:21px; font-weight:500; color:#1B3A2B; margin:0 0 8px;">Личная охрана</h3>
+          <p style="font-size:15px; color:rgba(33,29,20,0.62); margin:0;">Телохранитель высшей категории всегда рядом</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="position:relative; padding:130px 40px;">
+    <svg style="position:absolute; top:6%; right:10%; width:13px; height:13px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite 1s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; bottom:8%; left:5%; width:11px; height:11px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite 2.4s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="text-align:center; max-width:640px; margin:0 auto 64px;">
+        <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">Программы</div>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(30px,4vw,42px); color:#1B3A2B; margin:0;">Выберите свой формат впечатлений</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
+        <div class="ld-pcard" style="background:#0E2018; color:#F1EBDD; border-radius:3px; padding:44px 34px; display:flex; flex-direction:column; border:1px solid rgba(241,235,221,0.08);">
+          <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87; margin-bottom:12px;">Один день</div>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:30px; font-weight:500; margin:0 0 10px;">Luxury Day</h3>
+          <p style="font-size:15px; color:rgba(241,235,221,0.72); margin:0 0 20px;">Незабываемый день в Санкт-Петербурге, собранный под ваши пожелания.</p>
+          <div style="font-family:'Cormorant Garamond', serif; font-size:28px; color:#C7AE87; margin-bottom:24px;"><span style="font-family:'Jost', sans-serif; font-size:12px; color:rgba(241,235,221,0.72); margin-right:6px;">от</span>100 000 ₽</div>
+          <div style="height:1px; background:rgba(241,235,221,0.22); margin-bottom:22px;"></div>
+          <ul style="list-style:none; margin:0 0 26px; padding:0; flex-grow:1;">
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">VIP-встреча в аэропорту, на вокзале или в отеле<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Автомобиль бизнес- или премиум-класса с водителем<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Индивидуальный маршрут по вашим пожеланиям<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Прогулка на премиальном катере<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Бронирование ресторана<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Персональный менеджер и консьерж-сервис<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+          </ul>
+          <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(241,235,221,0.72); margin-bottom:12px;">Дополнительно</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px;">
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Вертолёт</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Фотограф</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Декор локации</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Романтический ужин</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Охрана</span>
+          </div>
+          <a href="#contact" style="text-align:center; background:transparent; border:1px solid #C7AE87; color:#F1EBDD; padding:14px; border-radius:2px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">Выбрать день</a>
+        </div>
+        <div class="ld-pcard" style="background:#1B3A2B; color:#F1EBDD; border-radius:3px; padding:44px 34px; display:flex; flex-direction:column; border:1px solid rgba(224,188,124,0.4); position:relative; box-shadow:inset 0 0 0 6px #1B3A2B, inset 0 0 0 7px rgba(224,188,124,0.55), 0 30px 60px -20px rgba(199,174,135,0.3);">
+          <div style="position:absolute; top:0; right:34px; transform:translateY(-50%); background:#A9895F; color:#0E2018; font-family:'Jost', sans-serif; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; padding:7px 14px; border-radius:2px; box-shadow:0 4px 16px rgba(169,137,95,0.5);">Популярно</div>
+          <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87; margin-bottom:12px;">2–3 дня</div>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:30px; font-weight:500; margin:0 0 10px;">Luxury Weekend</h3>
+          <p style="font-size:15px; color:rgba(241,235,221,0.72); margin:0 0 20px;">Полностью организованный отдых без забот о бронированиях и логистике.</p>
+          <div style="font-family:'Cormorant Garamond', serif; font-size:28px; color:#C7AE87; margin-bottom:24px;"><span style="font-family:'Jost', sans-serif; font-size:12px; color:rgba(241,235,221,0.72); margin-right:6px;">от</span>250 000 ₽</div>
+          <div style="height:1px; background:rgba(241,235,221,0.22); margin-bottom:22px;"></div>
+          <ul style="list-style:none; margin:0 0 26px; padding:0; flex-grow:1;">
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">VIP-трансфер и автомобиль премиум-класса с водителем<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Проживание в пятизвёздочном отеле<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Прогулка на яхте или премиальном катере<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Бронирование лучших ресторанов города<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Премиальное SPA или банный комплекс<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Персональный менеджер 24/7 и консьерж-сервис<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+          </ul>
+          <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(241,235,221,0.72); margin-bottom:12px;">Дополнительно</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px;">
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Вертолёт</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Закрытые экскурсии</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Фотограф</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Предложение руки и сердца</span>
+          </div>
+          <a href="#contact" style="text-align:center; background:#C7AE87; border:1px solid #C7AE87; color:#0E2018; padding:14px; border-radius:2px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">Выбрать выходные</a>
+        </div>
+        <div class="ld-pcard" style="background:#0E2018; color:#F1EBDD; border-radius:3px; padding:44px 34px; display:flex; flex-direction:column; border:1px solid rgba(241,235,221,0.08);">
+          <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87; margin-bottom:12px;">7 дней</div>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:30px; font-weight:500; margin:0 0 10px;">Luxury Signature</h3>
+          <p style="font-size:15px; color:rgba(241,235,221,0.72); margin:0 0 20px;">Максимальный уровень комфорта — каждый день создаётся по вашим пожеланиям.</p>
+          <div style="font-family:'Cormorant Garamond', serif; font-size:28px; color:#C7AE87; margin-bottom:24px;"><span style="font-family:'Jost', sans-serif; font-size:12px; color:rgba(241,235,221,0.72); margin-right:6px;">от</span>500 000 ₽</div>
+          <div style="height:1px; background:rgba(241,235,221,0.22); margin-bottom:22px;"></div>
+          <ul style="list-style:none; margin:0 0 26px; padding:0; flex-grow:1;">
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Полная организация путешествия «под ключ»<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Премиальный автомобиль с личным водителем<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Проживание в лучших отелях Санкт-Петербурга<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Несколько прогулок на яхте<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">SPA и банные комплексы премиум-класса<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+            <li style="font-size:15px; padding:7px 0 7px 20px; position:relative;">Персональный менеджер 24/7 и консьерж-сервис<span style="position:absolute; left:0; top:14px; width:6px; height:6px; transform:rotate(45deg); background:#C7AE87;"></span></li>
+          </ul>
+          <div style="font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(241,235,221,0.72); margin-bottom:12px;">Дополнительно</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px;">
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Частный вертолёт</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Суперкар</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Личная охрана</span>
+            <span style="font-size:13px; padding:6px 12px; border:1px solid rgba(241,235,221,0.22); border-radius:20px; color:rgba(241,235,221,0.72);">Стилист и видеограф</span>
+          </div>
+          <a href="#contact" style="text-align:center; background:transparent; border:1px solid #C7AE87; color:#F1EBDD; padding:14px; border-radius:2px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;">Выбрать неделю</a>
+        </div>
+      </div>
+      <div class="ld-ornament" style="color:#A9895F; margin:56px 0 0;"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" style="position:relative; padding:110px 40px 130px;">
+    <svg style="position:absolute; top:9%; left:6%; width:12px; height:12px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite .3s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; bottom:6%; right:8%; width:14px; height:14px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite 1.7s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="text-align:center; max-width:640px; margin:0 auto 56px;">
+        <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:16px;">Живые кадры</div>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(30px,4vw,42px); color:#1B3A2B; margin:0;">Атмосфера Luxury Day</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+        <div style="position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;" onMouseEnter="{{ setGalleryHover1 }}" onMouseLeave="{{ clearGalleryHover }}">
+          <image-slot id="gallery-1" shape="rect" style="width:100%; height:100%;" placeholder="Вертолёт над городом"></image-slot>
+          <div style="{{ galleryFadeStyle1 }}"></div>
+          <div style="{{ galleryCapStyle1 }}">Вертолётная прогулка</div>
+        </div>
+        <div style="position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;" onMouseEnter="{{ setGalleryHover2 }}" onMouseLeave="{{ clearGalleryHover }}">
+          <image-slot id="gallery-2" shape="rect" style="width:100%; height:100%;" placeholder="Яхта на Неве"></image-slot>
+          <div style="{{ galleryFadeStyle2 }}"></div>
+          <div style="{{ galleryCapStyle2 }}">Прогулка по каналам</div>
+        </div>
+        <div style="position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;" onMouseEnter="{{ setGalleryHover3 }}" onMouseLeave="{{ clearGalleryHover }}">
+          <image-slot id="gallery-3" shape="rect" style="width:100%; height:100%;" placeholder="VIP-трансфер"></image-slot>
+          <div style="{{ galleryFadeStyle3 }}"></div>
+          <div style="{{ galleryCapStyle3 }}">VIP-трансфер</div>
+        </div>
+        <div style="position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;" onMouseEnter="{{ setGalleryHover4 }}" onMouseLeave="{{ clearGalleryHover }}">
+          <image-slot id="gallery-4" shape="rect" style="width:100%; height:100%;" placeholder="Ужин в ресторане"></image-slot>
+          <div style="{{ galleryFadeStyle4 }}"></div>
+          <div style="{{ galleryCapStyle4 }}">Ужин на террасе</div>
+        </div>
+        <div style="position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;" onMouseEnter="{{ setGalleryHover5 }}" onMouseLeave="{{ clearGalleryHover }}">
+          <img src="./assets/gallery-lodge.jpg" alt="Бани и спа" style="width:100%; height:100%; object-fit:cover;">
+          <div style="{{ galleryFadeStyle5 }}"></div>
+          <div style="{{ galleryCapStyle5 }}">Бани и спа</div>
+        </div>
+        <div style="position:relative; aspect-ratio:3/4; overflow:hidden; border-radius:2px;" onMouseEnter="{{ setGalleryHover6 }}" onMouseLeave="{{ clearGalleryHover }}">
+          <img src="./assets/gallery-boat.jpg" alt="Закат над Петербургом" style="width:100%; height:100%; object-fit:cover;">
+          <div style="{{ galleryFadeStyle6 }}"></div>
+          <div style="{{ galleryCapStyle6 }}">Закат над Петербургом</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section style="position:relative; padding:120px 40px; text-align:center; color:#F1EBDD; background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(14,32,24,0.4), rgba(14,32,24,0.88)), linear-gradient(rgba(14,32,24,0.78), rgba(27,58,43,0.62) 55%, rgba(14,32,24,0.88)), url('./assets/promise-bg.jpg') center/cover no-repeat; overflow:hidden;">
+    <svg style="position:absolute; top:14%; left:12%; width:12px; height:12px; color:#E0BC7C; animation:ldTwinkle 3.2s ease-in-out infinite .9s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <svg style="position:absolute; bottom:16%; right:14%; width:15px; height:15px; color:#E0BC7C; animation:ldTwinkle 3.2s ease-in-out infinite 2.2s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <div style="position:absolute; inset:0; box-shadow:inset 0 0 140px 40px rgba(14,32,24,0.75); pointer-events:none;"></div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-bottom:32px; color:#C7AE87;">
+      <span style="height:1px; width:100px; background:linear-gradient(90deg, transparent, currentColor, transparent); opacity:0.5;"></span>
+      <span style="width:7px; height:7px; transform:rotate(45deg); background:currentColor;"></span>
+      <span style="height:1px; width:100px; background:linear-gradient(90deg, currentColor, transparent); opacity:0.5;"></span>
+    </div>
+    <blockquote style="font-family:'Cormorant Garamond', serif; font-style:italic; font-size:clamp(22px,3vw,32px); max-width:800px; margin:0 auto; line-height:1.5;">«Мы не продаём экскурсии — мы дарим один безупречный день, который останется с вами надолго.»</blockquote>
+    <div style="margin-top:26px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#C7AE87;">Команда Luxury Day</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="position:relative; padding:130px 40px; background:radial-gradient(ellipse 700px 400px at 50% 0%, rgba(201,168,112,0.16), transparent 60%), #F1EBDD;">
+    <svg style="position:absolute; top:8%; right:9%; width:12px; height:12px; color:#A9895F; animation:ldTwinkle 3.2s ease-in-out infinite 1.2s;" viewBox="0 0 24 24" fill="none"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="currentColor"></path></svg>
+    <div style="max-width:1140px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start;">
+      <div>
+        <div style="font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase; color:#A9895F; margin-bottom:20px;">Начните здесь</div>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(32px,4.2vw,48px); color:#1B3A2B; margin:0 0 22px; line-height:1.08;">Оставьте заявку —<br>мы свяжемся с вами</h2>
+        <p style="color:rgba(33,29,20,0.62); font-size:17px; margin:0 0 36px; max-width:420px;">Расскажите о своих пожеланиях — мы соберём маршрут именно под вас и свяжемся в течение 15 минут.</p>
+        <div style="display:flex; gap:14px; margin-bottom:22px;">
+          <span style="color:#A9895F;">☎</span>
+          <div><span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A9895F;">Телефон</span><span style="color:#1B3A2B; font-size:17px;">8 (919) 228-13-91</span></div>
+        </div>
+        <div style="display:flex; gap:14px;">
+          <span style="color:#A9895F;">✉</span>
+          <div><span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A9895F;">Почта</span><span style="color:#1B3A2B; font-size:17px;">concierge@luxuryday.ru</span></div>
+        </div>
+      </div>
+      <div style="background:#E7DEC7; border:1px solid rgba(201,168,112,0.5); padding:44px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+          <label style="display:block;">
+            <span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#1B3A2B; margin-bottom:8px;">Имя</span>
+            <input type="text" placeholder="Как к вам обращаться" style="width:100%; border:none; border-bottom:1px solid rgba(33,29,20,0.14); background:transparent; font-family:'EB Garamond', serif; font-size:17px; color:#1B3A2B; padding:6px 2px 10px; box-sizing:border-box;">
+          </label>
+          <label style="display:block;">
+            <span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#1B3A2B; margin-bottom:8px;">Телефон</span>
+            <input type="tel" placeholder="+7 ___ ___-__-__" style="width:100%; border:none; border-bottom:1px solid rgba(33,29,20,0.14); background:transparent; font-family:'EB Garamond', serif; font-size:17px; color:#1B3A2B; padding:6px 2px 10px; box-sizing:border-box;">
+          </label>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+          <label style="display:block;">
+            <span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#1B3A2B; margin-bottom:8px;">Почта</span>
+            <input type="text" placeholder="you@mail.com" style="width:100%; border:none; border-bottom:1px solid rgba(33,29,20,0.14); background:transparent; font-family:'EB Garamond', serif; font-size:17px; color:#1B3A2B; padding:6px 2px 10px; box-sizing:border-box;">
+          </label>
+          <label style="display:block;">
+            <span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#1B3A2B; margin-bottom:8px;">Telegram</span>
+            <input type="text" placeholder="@username" style="width:100%; border:none; border-bottom:1px solid rgba(33,29,20,0.14); background:transparent; font-family:'EB Garamond', serif; font-size:17px; color:#1B3A2B; padding:6px 2px 10px; box-sizing:border-box;">
+          </label>
+        </div>
+        <label style="display:block; margin-bottom:24px;">
+          <span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#1B3A2B; margin-bottom:8px;">Программа</span>
+          <select style="width:100%; border:none; border-bottom:1px solid rgba(33,29,20,0.14); background:transparent; font-family:'EB Garamond', serif; font-size:17px; color:#1B3A2B; padding:6px 2px 10px; box-sizing:border-box; cursor:pointer;">
+            <option>Подобрать индивидуально</option>
+            <option>Luxury Day — от 100 000 ₽</option>
+            <option>Luxury Weekend — от 250 000 ₽</option>
+            <option>Luxury Signature — от 500 000 ₽</option>
+          </select>
+        </label>
+        <label style="display:block; margin-bottom:28px;">
+          <span style="display:block; font-family:'Jost', sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#1B3A2B; margin-bottom:8px;">Комментарий</span>
+          <textarea placeholder="Расскажите о пожеланиях" rows="3" style="width:100%; border:none; border-bottom:1px solid rgba(33,29,20,0.14); background:transparent; font-family:'EB Garamond', serif; font-size:17px; color:#1B3A2B; padding:6px 2px 10px; resize:vertical; box-sizing:border-box;"></textarea>
+        </label>
+        <button style="width:100%; text-align:center; background:#A9895F; border:none; color:#0E2018; padding:16px; border-radius:2px; font-family:'Jost', sans-serif; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; cursor:pointer;">Отправить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0E2018; color:rgba(241,235,221,0.72); padding:50px 40px 30px;">
+    <div style="max-width:1140px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:30px; border-bottom:1px solid rgba(241,235,221,0.22); flex-wrap:wrap; gap:20px;">
+        <div style="display:flex; align-items:center; gap:14px;">
+<img src="./assets/logo-badge.png" alt="Luxury Day" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+          <span style="font-family:'Cormorant Garamond', serif; font-size:20px; letter-spacing:0.08em; color:#F1EBDD;">Luxury Day</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:24px;">
+          <div style="display:flex; gap:30px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;">
+            <a href="#about" style="color:rgba(241,235,221,0.72);">О нас</a>
+            <a href="#packages" style="color:rgba(241,235,221,0.72);">Программы</a>
+            <a href="#contact" style="color:rgba(241,235,221,0.72);">Контакты</a>
+          </div>
+          <div style="display:flex; gap:14px;">
+            <a href="#" aria-label="Telegram" style="width:34px; height:34px; border-radius:50%; border:1px solid rgba(241,235,221,0.22); display:flex; align-items:center; justify-content:center; color:#C7AE87;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 4L2.5 11.5 9 13.5M21 4L15.5 20 9 13.5M21 4L9 13.5"></path></svg>
+            </a>
+            <a href="#" aria-label="WhatsApp" style="width:34px; height:34px; border-radius:50%; border:1px solid rgba(241,235,221,0.22); display:flex; align-items:center; justify-content:center; color:#C7AE87;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 19l1.2-3.6A7 7 0 1112 19c-1.2 0-2.3-.3-3.3-.9L6 19z"></path><path d="M9.5 10c0 2.5 2 4.5 4.5 4.5"></path></svg>
+            </a>
+            <a href="#" aria-label="Instagram" style="width:34px; height:34px; border-radius:50%; border:1px solid rgba(241,235,221,0.22); display:flex; align-items:center; justify-content:center; color:#C7AE87;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"></circle></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:22px; display:flex; justify-content:space-between; font-family:'Jost', sans-serif; font-size:11.5px; color:rgba(241,235,221,0.4); flex-wrap:wrap; gap:10px;">
+        <span>© 2026 Luxury Day. Все права защищены.</span>
+        <span>Санкт-Петербург</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false, hoveredGallery: null };
+  componentDidMount() {
+    this._onScroll = () => {
+      const scrolled = window.scrollY > 40;
+      if (scrolled !== this.state.scrolled) this.setState({ scrolled });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    const hovered = this.state.hoveredGallery;
+    const out = {
+      headerStyle: `position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:${scrolled ? '16px 48px' : '22px 48px'}; background:${scrolled ? 'rgba(241,235,221,0.9)' : 'transparent'}; backdrop-filter:${scrolled ? 'blur(10px)' : 'none'}; box-shadow:${scrolled ? '0 1px 0 rgba(33,29,20,0.14)' : 'none'}; transition:background .4s ease, padding .4s ease;`,
+      headerBrandStyle: `display:flex; align-items:center; gap:12px; font-family:'Cormorant Garamond', serif; font-size:22px; letter-spacing:0.1em; color:${scrolled ? '#1B3A2B' : '#F1EBDD'}; transition:color .4s ease;`,
+      headerLinkStyle: `font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:${scrolled ? 'rgba(33,29,20,0.62)' : 'rgba(241,235,221,0.72)'}; transition:color .4s ease;`
+    };
+    for (let i = 1; i <= 6; i++) {
+      const on = hovered === i;
+      out['setGalleryHover' + i] = () => this.setState({ hoveredGallery: i });
+      out['galleryFadeStyle' + i] = `position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(14,32,24,0.7) 100%); opacity:${on ? 1 : 0}; transition:opacity .5s ease; pointer-events:none;`;
+      out['galleryCapStyle' + i] = `position:absolute; left:16px; right:16px; bottom:14px; font-family:'Jost', sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#F1EBDD; opacity:${on ? 1 : 0}; transform:translateY(${on ? 0 : 8}px); transition:opacity .5s ease, transform .5s ease; pointer-events:none;`;
+    }
+    out.clearGalleryHover = () => this.setState({ hoveredGallery: null });
+    return out;
+  }
+}
+</script>
+</body>
+</html>
